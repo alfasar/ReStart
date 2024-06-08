@@ -50,7 +50,7 @@ dependencies {
 
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.livedata)
-    ksp(libs.lifecycle.compiler)
+//    ksp(libs.lifecycle.compiler)
 
     implementation(libs.coroutines)
 
