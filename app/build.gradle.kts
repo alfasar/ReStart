@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.kotlin.ksp)
+    alias(libs.plugins.hilt)
+    kotlin("kapt")
 }
 
 android {
@@ -33,7 +34,12 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
+}
+
+kapt {
+    correctErrorTypes = true
 }
 
 dependencies {
@@ -50,7 +56,7 @@ dependencies {
 
     implementation(libs.lifecycle.viewmodel)
     implementation(libs.lifecycle.livedata)
-//    ksp(libs.lifecycle.compiler)
+    kapt(libs.lifecycle.compiler)
 
     implementation(libs.coroutines)
 
@@ -58,6 +64,9 @@ dependencies {
     implementation(libs.navigation.ui)
 
     implementation(libs.work.manager)
+
+    implementation(libs.hilt.android)
+    implementation(libs.hilt.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
