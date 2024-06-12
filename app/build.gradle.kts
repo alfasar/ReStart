@@ -1,3 +1,4 @@
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -35,6 +36,9 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+    }
+    packaging {
+        resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
 }
 
