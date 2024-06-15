@@ -40,6 +40,11 @@ android {
     packaging {
         resources.excludes.add("META-INF/gradle/incremental.annotation.processors")
     }
+    kotlin {
+        sourceSets.all {
+            languageSettings.enableLanguageFeature("ExplicitBackingFields")
+        }
+    }
 }
 
 kapt {
